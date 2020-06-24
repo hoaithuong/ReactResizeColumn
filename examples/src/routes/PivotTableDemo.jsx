@@ -20,11 +20,21 @@ import PivotTableColumnsGrowToFitExample from "../components/PivotTableColumnsGr
 import PivotTableColumnsGrowToFitExampleSRC from "!raw-loader!../components/PivotTableColumnsGrowToFitExample"; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved, import/extensions, import/first
 import PivotTableManualResizingExample from "../components/PivotTableManualResizingExample";
 import PivotTableManualResizingExampleSRC from "!raw-loader!../components/PivotTableManualResizingExample"; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved, import/extensions, import/first
+import PivotTableSizingComplexExample from "../components/PivotTableSizingComplexExample";
+import PivotTableSizingComplexExampleSRC from "!raw-loader!../components/PivotTableSizingComplexExample";
 
 export const PivotTableDemo = () => (
     <div>
         <h1>Pivot Table</h1>
 
+        <hr className="separator" />
+        <h2>Pivot resizing all columns</h2>
+        <div id="measures-row-attributes-and-column-attributes-qa">
+            <ExampleWithSource
+                for={() => <PivotTableSizingComplexExample />}
+                source={PivotTableSizingComplexExampleSRC}
+            />
+        </div>
         <hr className="separator" />
 
         <h2>Example of presorted pivot table</h2>

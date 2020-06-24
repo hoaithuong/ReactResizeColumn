@@ -134,9 +134,15 @@ export class PivotTableSizingComplexExample extends Component {
                     </button>
                     <button
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure-all"
-                        onClick={() => this.onButtonClick(allMeasureWidth(60))}
+                        onClick={() => this.onButtonClick(allMeasureWidth(100))}
                     >
                         Change all measures width
+                    </button>
+                    <button
+                        className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure-all"
+                        onClick={() => this.onButtonClick(allMeasureWidth(400))}
+                    >
+                        Change all measures width 2
                     </button>
 
                     <label style={{ paddingLeft: 20 }}>
@@ -176,6 +182,10 @@ export class PivotTableSizingComplexExample extends Component {
                                 columnWidths: [...this.state.columnWidths],
                                 defaultWidth: this.state.autoResize ? "viewport" : "unset",
                                 growToFit: this.state.growToFit,
+                            },
+                            menu: {
+                                aggregations: true,
+                                aggregationsSubMenu: true,
                             },
                         }}
                         pageSize={20}
