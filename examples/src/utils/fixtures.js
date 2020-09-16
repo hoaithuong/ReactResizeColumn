@@ -18,6 +18,9 @@ console.log("The /gdc proxy is connected to: ", backendUrl, " with projectId: ",
 
 // your projectId would be probably static (you may ignore the code above)
 
+export const thguri = `/gdc/md/${demoProjectId}/obj/10848`;
+export const thgiden = "aar6YizJhq8H";
+
 export const backendUrlForInfo = backendUrl;
 export const projectId = demoProjectId;
 

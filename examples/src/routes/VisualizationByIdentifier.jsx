@@ -52,13 +52,13 @@ export const VisualizationByIdentifier = () => (
 
         <hr className="separator" />
 
-        <h2 id="column-chart">Column Chart</h2>
+        <h2 id="column-chart">Manual Resize Table use identifier</h2>
         <ExampleWithSource
             for={VisualizationColumnChartByIdentifierExample}
             source={VisualizationColumnChartExampleSRC}
         />
 
-        <hr className="separator" />
+        {/* <hr className="separator" />
 
         <h2 id="table">Table</h2>
         <ExampleWithSource for={VisualizationTableExample} source={VisualizationTableExampleSRC} />
@@ -153,7 +153,7 @@ export const VisualizationByIdentifier = () => (
         <ExampleWithSource
             for={VisualizationMeasureValueFilterTreatNullAsZeroByIdentifierExample}
             source={VisualizationMeasureValueFilterTreatNullAsZeroByIdentifierExampleSRC}
-        />
+        /> */}
     </div>
 );
 

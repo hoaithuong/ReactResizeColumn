@@ -10,6 +10,8 @@ import {
     locationStateDisplayFormIdentifier,
     franchiseFeesIdentifier,
     franchiseFeesAdRoyaltyIdentifier,
+    franchiseFeesInitialFranchiseFeeIdentifier,
+    franchiseFeesIdentifierOngoingRoyalty,
 } from "../utils/fixtures";
 
 const measures = [
@@ -20,6 +22,14 @@ const measures = [
         .format("#,##0")
         .localIdentifier("franchiseFeesAdRoyaltyIdentifier")
         .alias("Ad Royality"),
+    Model.measure(franchiseFeesInitialFranchiseFeeIdentifier)
+        .format("#,##0")
+        .localIdentifier("franchiseFeesInitialFranchiseFeeIdentifier")
+        .alias("Initial Royality"),
+    Model.measure(franchiseFeesIdentifierOngoingRoyalty)
+        .format("#,##0")
+        .localIdentifier("franchiseFeesIdentifierOngoingRoyalty")
+        .alias("Ongoing Royality"),
 ];
 
 const attributes = [Model.attribute(locationStateDisplayFormIdentifier).localIdentifier("state")];
@@ -143,26 +153,26 @@ export class PivotTableSizingWithMultipleMeasuresExample extends Component {
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-attribute"
                         onClick={() => this.onButtonClick(attributeWidth(400))}
                     >
-                        Change Location State column width to 400
+                        Change Location State column to 400
                     </button>
                     <button
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure"
                         onClick={() => this.onButtonClick(measureWidth(60))}
                     >
-                        Change Q1 column width to 60
+                        Change Q1 column to 60
                     </button>
                     <button
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure-all"
-                        onClick={() => this.onButtonClick(allMeasureWidth(60))}
+                        onClick={() => this.onButtonClick(allMeasureWidth(100))}
                     >
-                        Change all measures width
+                        Change all measures to 100
                     </button>
 
                     <button
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-given-measures"
-                        onClick={() => this.onButtonClick(weakMeasureWidth(60))}
+                        onClick={() => this.onButtonClick(weakMeasureWidth(400))}
                     >
-                        Change Franchise Fees measure width
+                        Change Franchise Fees measure to 400
                     </button>
 
                     <label style={{ paddingLeft: 50 }}>

@@ -22,11 +22,20 @@ import PivotTableManualResizingExample from "../components/PivotTableManualResiz
 import PivotTableManualResizingExampleSRC from "!raw-loader!../components/PivotTableManualResizingExample"; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved, import/extensions, import/first
 import PivotTableSizingComplexExample from "../components/PivotTableSizingComplexExample";
 import PivotTableSizingComplexExampleSRC from "!raw-loader!../components/PivotTableSizingComplexExample";
-
+import PivotTableSizingWithMultipleMeasuresExample from "../components/PivotTableSizingWithMultipleMeasuresExample";
+import PivotTableSizingWithMultipleMeasuresExampleSRC from "!raw-loader!../components/PivotTableSizingWithMultipleMeasuresExample";
 export const PivotTableDemo = () => (
     <div>
         <h1>Pivot Table</h1>
 
+        <hr className="separator" />
+        <h2>Pivot resizing each measure columns</h2>
+        <div id="measures-row-attributes-and-column-attributes-qa-hi">
+            <ExampleWithSource
+                for={() => <PivotTableSizingWithMultipleMeasuresExample />}
+                source={PivotTableSizingWithMultipleMeasuresExampleSRC}
+            />
+        </div>
         <hr className="separator" />
         <h2>Pivot resizing all columns</h2>
         <div id="measures-row-attributes-and-column-attributes-qa">

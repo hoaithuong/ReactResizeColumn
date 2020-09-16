@@ -9,12 +9,27 @@ import {
     quarterDateIdentifier,
     locationStateDisplayFormIdentifier,
     franchiseFeesIdentifier,
+    franchiseFeesAdRoyaltyIdentifier,
+    franchiseFeesInitialFranchiseFeeIdentifier,
+    franchiseFeesIdentifierOngoingRoyalty,
 } from "../utils/fixtures";
 
 const measures = [
     Model.measure(franchiseFeesIdentifier)
         .format("#,##0")
         .localIdentifier("franchiseFees"),
+    Model.measure(franchiseFeesAdRoyaltyIdentifier)
+        .format("#,##0")
+        .localIdentifier("franchiseFeesAdRoyaltyIdentifier")
+        .alias("Ad Royality"),
+    Model.measure(franchiseFeesInitialFranchiseFeeIdentifier)
+        .format("#,##0")
+        .localIdentifier("franchiseFeesInitialFranchiseFeeIdentifier")
+        .alias("Initial Royality"),
+    Model.measure(franchiseFeesIdentifierOngoingRoyalty)
+        .format("#,##0")
+        .localIdentifier("franchiseFeesIdentifierOngoingRoyalty")
+        .alias("Ongoing Royality"),
 ];
 
 const attributes = [Model.attribute(locationStateDisplayFormIdentifier).localIdentifier("state")];
@@ -24,6 +39,12 @@ const columns = [Model.attribute(quarterDateIdentifier).localIdentifier("quarter
 const attributeWidth = width => Model.attributeColumnWidthItem("state", width);
 
 const allMeasureWidth = width => Model.allMeasureColumnWidthItem(width);
+
+const measureWidth = width =>
+    Model.measureColumnWidthItem("franchiseFees", width).attributeLocators({
+        attributeIdentifier: "quarterDate",
+        element: `/gdc/md/${projectId}/obj/2009/elements?id=1`,
+    });
 
 const isAllMeasureColumnWidthItem = columnWidthItem => {
     return (
@@ -73,12 +94,6 @@ const isSameWidthItem = (item, newItem) => {
     return false;
 };
 
-const measureWidth = width =>
-    Model.measureColumnWidthItem("franchiseFees", width).attributeLocators({
-        attributeIdentifier: "quarterDate",
-        element: `/gdc/md/${projectId}/obj/2009/elements?id=1`,
-    });
-
 export class PivotTableSizingComplexExample extends Component {
     state = {
         columnWidths: [],
@@ -124,25 +139,25 @@ export class PivotTableSizingComplexExample extends Component {
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-attribute"
                         onClick={() => this.onButtonClick(attributeWidth(400))}
                     >
-                        Change Location State column width to 400
+                        Change Location State width to 400px
                     </button>
                     <button
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure"
                         onClick={() => this.onButtonClick(measureWidth(60))}
                     >
-                        Change Q1 column width to 60
+                        Change Q1 Fanchise Fees width to 60px
                     </button>
                     <button
-                        className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure-all"
+                        className="gd-but ton gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure-all"
                         onClick={() => this.onButtonClick(allMeasureWidth(100))}
                     >
-                        Change all measures width
+                        Change all measures to 100px
                     </button>
                     <button
                         className="gd-button gd-button-secondary gd-button gd-button-secondary s-change-width-button-measure-all"
                         onClick={() => this.onButtonClick(allMeasureWidth(400))}
                     >
-                        Change all measures width 2
+                        Change all measures to 400px
                     </button>
 
                     <label style={{ paddingLeft: 20 }}>

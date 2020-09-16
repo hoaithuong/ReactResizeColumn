@@ -45,13 +45,13 @@ export const VisualizationByUri = () => (
 
         <hr className="separator" />
 
-        <h2 id="column-chart">Column Chart</h2>
+        <h2 id="column-chart">Manual Resize Table use URI</h2>
         <ExampleWithSource
             for={VisualizationColumnChartExample}
             source={VisualizationColumnChartByUriExampleSRC}
         />
 
-        <hr className="separator" />
+        {/* <hr className="separator" />
 
         <h2 id="table">Table</h2>
         <ExampleWithSource for={VisualizationTableExample} source={VisualizationTableExampleSRC} />
@@ -122,7 +122,7 @@ export const VisualizationByUri = () => (
         <ExampleWithSource
             for={VisualizationGeoPushpinChartByUriExample}
             source={VisualizationGeoPushpinChartByUriExampleSRC}
-        />
+        /> */}
     </div>
 );
 
